@@ -1,0 +1,19 @@
+<ion-view title="Intärn">
+
+    <ion-content class="has-header padding">
+        <ion-list>
+            <a href="#/mcb/login" class="item item-icon-left" ng-if="!authenticated"><i class="icon ion-person"></i>Bitte zerscht aamälde!!</a>
+            <a href="#/mcb/login" class="item item-icon-left" ng-if="authenticated"><i class="icon ion-person"></i>Di Profil / Abmälde ( {{mcbuser.regEmail}} )</a>
+            <a href="#/mcb/chatgrp" class="item item-icon-left" ng-if="authenticated"><i class="icon ion-chatbubble-working"></i>Schryybe</a>
+            <a href="#/mcb/gps" class="item item-icon-left" ng-if="authenticated"><i class="icon ion-ios7-world-outline"></i>Wär isch wo?</a>
+            <div class="item item-icon-left item-button-right" ng-if="authenticated"><i class="icon ion-location"></i>Sende GPS einmalig <button class="button button-positive" ng-click="gpsonce()"><i class="icon ion-ios7-navigate"></i>&nbsp;&nbsp;&nbsp;&nbsp;</button></div>
+            <ion-toggle class="item item-icon-left item-button-right" ng-if="authenticated" ng-model="data.gpsToggle" ng-change="gpsbackground(data.gpsToggle)"><i class="icon ion-location"></i>Teil dini Position</ion-toggle>
+
+            <ion-list ng-if="authenticated">
+                <ion-item class="item assertive"><strong>Status: {{ gpsmessage }}</strong></ion-item>
+                <ion-item class="item item-text-wrap">Es wird nur immer 1 Position behalte! Es kenne nur Mitglieder di Position seeh.</ion-item>
+            </ion-list>
+
+        </ion-list>
+    </ion-content>
+</ion-view>

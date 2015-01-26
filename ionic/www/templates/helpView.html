@@ -1,0 +1,34 @@
+<ion-view title="Help">
+
+    <ion-content class="has-header padding">
+        <div class="card" id="topofpage">
+          <div class="item item-divider">
+            Hilfe
+          </div>
+          <div class="item item-text-wrap">
+            Die App isch fir dr <open-external url="url" exit="closeBrowser()" load-start="loadStart()"
+                load-stop="loadStop()"
+                load-error="loadError()">MCB Internet Dienscht</open-external>.
+            D' App beinhaltet die glyyche Funggzione wie dr internet dienscht aber mit gwisse komfort
+            Funggzione vo dim Handy. Inhalt und Funggzione erhebe kai Aaspruch uf korräggdheit. Die App
+            isch gratis und jedi Haftig isch usgschlosse. Mäld dy bi dr Märtplatz Clique wenn de mitmache
+            willsch!<br />
+            <img src="img/splash.png" height="300">
+          </div>
+          <div class="item item-divider">
+            Version
+          </div>
+          <div class="item item-text-wrap">
+            Version vo dere App: {{ version }}
+          </div>
+          <div class="item item-divider">
+            Grät
+          </div>
+          <div class="item item-text-wrap">
+            <p>Model:               {{device.model}}</p>
+            <p>Platform:            {{device.platform}}</p>
+            <p>Version:             {{device.version}}</p>
+          </div>
+        </div>
+    </ion-content>
+</ion-view>
