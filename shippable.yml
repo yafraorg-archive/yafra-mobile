@@ -1,0 +1,16 @@
+language: node_js
+
+node_js:
+  - 0.10.35
+
+before_install:
+ - npm install -g gulp bower ionic cordova karma protractor
+
+before_script: 
+  - mkdir -p shippable/testresults
+  - mkdir -p shippable/codecoverage
+
+script:
+  - ./update-bower.sh
+  - ./node_modules/.bin/istanbul cover grunt -- -u tdd
+  - ./node_modules/.bin/istanbul report cobertura --dir  shippable/codecoverage/
