@@ -4,6 +4,13 @@ node_js:
   - 0.10.35
 
 before_install:
+  - sudo apt-get update -qq
+  - sudo apt-get install -qq libstdc++6:i386 lib32z1
+  - wget http://dl.google.com/android/android-sdk_r23.0.2-linux.tgz
+  - tar -zxf android-sdk_r23.0.2-linux.tgz
+  - export ANDROID_HOME=`pwd`/android-sdk-linux
+  - export PATH=${PATH}:${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools
+  - echo "y" | android update sdk -a --filter tools,platform-tools,build-tools-20.0.0,android-19 --no-ui --force
   - npm -g install gulp bower ionic cordova karma protractor
 
 before_script: 
@@ -12,3 +19,4 @@ before_script:
 
 script:
   - ./update-bower.sh
+  - ./build-clean-android.sh
