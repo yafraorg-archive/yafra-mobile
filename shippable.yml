@@ -25,6 +25,9 @@ script:
   - ./update-bower.sh
   - cordova
   - ls /usr/lib/node_modules/ionic
+  - ls node_modules
+  - ls /usr
+  - which npm
   - pwd
   - ls
 #  - ./build-clean-android.sh
