@@ -29,6 +29,7 @@ script:
   - ls /usr
   - which npm
   - ls /home/shippable/.nvm/v0.10.24/bin
+  - ls node_modules/ionic
   - pwd
   - ls
 #  - ./build-clean-android.sh
