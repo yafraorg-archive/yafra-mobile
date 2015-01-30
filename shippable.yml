@@ -4,7 +4,8 @@ node_js:
   - 0.10.35
 
 before_install:
-  - npm -g install gulp bower ionic cordova karma protractor
+  - npm install
+  - npm -g install ionic cordova karma protractor
   - sudo apt-get install -qq libstdc++6:i386 lib32z1
   - wget http://dl.google.com/android/android-sdk_r23.0.2-linux.tgz
   - tar -zxf android-sdk_r23.0.2-linux.tgz
