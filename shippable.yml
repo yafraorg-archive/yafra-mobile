@@ -28,6 +28,7 @@ script:
   - ls node_modules
   - ls /usr
   - which npm
+  - ls /home/shippable/.nvm/v0.10.24/bin
   - pwd
   - ls
 #  - ./build-clean-android.sh
