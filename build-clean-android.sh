@@ -8,7 +8,7 @@
 
 echo "Make sure you set AndroidManifest.xml android:debuggable to false!"
 cd ionic
-ionic platform add android
+/usr/lib/node_modules/ionic/bin/ionic platform add android
 ../update-plugins.sh
 ionic resources
 ionic lib
