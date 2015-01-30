@@ -21,5 +21,5 @@ before_script:
 
 script:
   - ./update-bower.sh
-  - /usr/lib/node_modules/ionic/bin/ionic
-  - ./build-clean-android.sh
+  - cordova
+#  - ./build-clean-android.sh
