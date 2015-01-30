@@ -1,11 +1,13 @@
 language: node_js
 
 node_js:
-  - 0.10.35
+  - '0.10'
 
 before_install:
   - npm install
-  - sudo npm install -g cordova ionic karma protractor
+  - sudo npm install -g cordova ionic
+# - sudo npm install -g karma
+  - sudo npm install -g protractor
   - sudo ln -s /usr/lib/node_modules/ionic/bin/ionic /usr/bin/ionic
   - sudo apt-get update -qq
   - sudo apt-get install -qq libstdc++6:i386 lib32z1
@@ -22,4 +24,7 @@ before_script:
 script:
   - ./update-bower.sh
   - cordova
+  - ll /usr/lib/node_modules/ionic/bin
+  - pwd
+  - ll
 #  - ./build-clean-android.sh
