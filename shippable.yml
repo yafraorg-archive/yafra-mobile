@@ -41,10 +41,7 @@ before_script:
   - ls
   - ls node_modules
   - ls node_modules/ionic/bin
-  - ls /usr/bin
-  - cordova
 
 script:
   - ./update-bower.sh
   - ./build-shippable.sh
-  - /home/shippable/workspace/src/github.com/yafraorg/yafra-mobile/node_modules/ionic/bin/ionic
