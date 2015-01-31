@@ -37,16 +37,14 @@ install:
 before_script: 
   - mkdir -p shippable/testresults
   - mkdir -p shippable/codecoverage
+  - pwd
+  - ls
   - ls node_modules
+  - ls node_modules/ionic/bin
+  - ls /usr/bin
   - cordova
-
 
 script:
   - ./update-bower.sh
-  - ls node_modules/ionic/bin
-  - ls /usr/bin
-  - node_modules/ionic/bin/ionic
-  - ionic
-  - pwd
-  - ls
   - ./build-shippable.sh
+  - /usr/bin/ionic
