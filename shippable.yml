@@ -47,4 +47,4 @@ before_script:
 script:
   - ./update-bower.sh
   - ./build-shippable.sh
-  - /usr/bin/ionic
+  - /home/shippable/workspace/src/github.com/yafraorg/yafra-mobile/node_modules/ionic/bin/ionic

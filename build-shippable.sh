@@ -8,12 +8,12 @@
 
 echo "Make sure you set AndroidManifest.xml android:debuggable to false!"
 cd ionic
-~/node_modules/ionic/bin/ionic platform add android
-~/update-plugins.sh ~/node_modules/ionic/bin/ionic
-~/node_modules/ionic/bin/ionic resources
-~/node_modules/ionic/bin/ionic lib
+/home/shippable/workspace/src/github.com/yafraorg/yafra-mobile/node_modules/ionic/bin/ionic platform add android
+~/update-plugins.sh /home/shippable/workspace/src/github.com/yafraorg/yafra-mobile/node_modules/ionic/bin/ionic
+/home/shippable/workspace/src/github.com/yafraorg/yafra-mobile/node_modules/ionic/bin/ionic resources
+/home/shippable/workspace/src/github.com/yafraorg/yafra-mobile/node_modules/ionic/bin/ionic lib
 node_modules/gulp/bin/gulp.js
-~/node_modules/ionic/bin/ionic build android
+/home/shippable/workspace/src/github.com/yafraorg/yafra-mobile/node_modules/ionic/bin/ionic build android
 cd platforms/android
 ant clean
 ant release
