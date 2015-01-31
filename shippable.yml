@@ -16,11 +16,30 @@ before_install:
   - export PATH=${PATH}:${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools
   - echo "y" | android update sdk -a --filter tools,platform-tools,build-tools-20.0.0,android-19 --no-ui --force
 
+before_install:
+  - sudo apt-get update -qq
+  - sudo apt-get install -qq libstdc++6:i386 lib32z1
+
+install:
+  # NodeJS
+  - npm install
+  - sudo npm install -g cordova ionic
+# - sudo npm install -g karma
+  - sudo npm install -g protractor
+  - sudo ln -s node_modules/ionic/bin/ionic /usr/bin/ionic
+  # Android SDK
+  - wget http://dl.google.com/android/android-sdk_r23.0.2-linux.tgz
+  - tar -zxf android-sdk_r23.0.2-linux.tgz
+  - export ANDROID_HOME=`pwd`/android-sdk-linux
+  - export PATH=${PATH}:${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools
+  - echo "y" | android update sdk -a --filter tools,platform-tools,build-tools-20.0.0,android-19 --no-ui --force
+
 before_script: 
   - mkdir -p shippable/testresults
   - mkdir -p shippable/codecoverage
 
 script:
+  - sudo ln -s node_modules/ionic/bin/ionic /usr/bin/ionic
   - ./update-bower.sh
   - cordova
   - ls /usr/lib/node_modules/ionic
@@ -31,7 +50,6 @@ script:
   - ls /home/shippable/.nvm/v0.10.24/bin
   - ls node_modules/ionic
   - node_modules/ionic/bin/ionic
-  - sudo ln -s node_modules/ionic/bin/ionic /usr/bin/ionic
   - pwd
   - ls
   - ./build-clean-android.sh
