@@ -39,17 +39,13 @@ before_script:
   - mkdir -p shippable/codecoverage
 
 script:
-  - sudo ln -s node_modules/ionic/bin/ionic /usr/bin/ionic
   - ./update-bower.sh
   - cordova
-  - ls /usr/lib/node_modules/ionic
+  - ls /usr/lib/node_modules/ionic/bin
+  - ls /usr/bin
   - ls node_modules
-  - ls /usr
-  - which npm
-  - which cordova
-  - ls /home/shippable/.nvm/v0.10.24/bin
-  - ls node_modules/ionic
   - node_modules/ionic/bin/ionic
+  - ionic
   - pwd
   - ls
-  - ./build-clean-android.sh
+  - ./build-shippable.sh
