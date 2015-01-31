@@ -8,7 +8,6 @@ before_install:
   - sudo npm install -g cordova ionic
 # - sudo npm install -g karma
   - sudo npm install -g protractor
-  - sudo ln -s node_modules/ionic/bin/ionic /usr/bin/ionic
   - sudo apt-get update -qq
   - sudo apt-get install -qq libstdc++6:i386 lib32z1
   - wget http://dl.google.com/android/android-sdk_r23.0.2-linux.tgz
@@ -24,15 +23,15 @@ before_script:
 script:
   - ./update-bower.sh
   - cordova
-  - ionic
   - ls /usr/lib/node_modules/ionic
   - ls node_modules
   - ls /usr
   - which npm
-  - which ionic
   - which cordova
   - ls /home/shippable/.nvm/v0.10.24/bin
   - ls node_modules/ionic
+  - node_modules/ionic/bin/ionic
+  - sudo ln -s node_modules/ionic/bin/ionic /usr/bin/ionic
   - pwd
   - ls
   - ./build-clean-android.sh
