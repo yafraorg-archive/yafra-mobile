@@ -4,42 +4,21 @@ Yafra Mobile App
 [![Build Status](https://api.shippable.com/projects/54c802e15ab6cc135289f882/badge?branchName=master)](https://app.shippable.com/projects/54c802e15ab6cc135289f882/builds/latest)
 
 ## Key functions
-* public
  * calendar
- * repertoire
- * baizeplan
- * allg. infos / messages
-
-* members only
  * login / logout
  * push messages
  * chat messages / pictures
  * contacts
  * gps with background service and dynamic maps
 
-### login / logout structure
-* email - must match the user email from DB
-* token oauth2
-* name or info on user
-
-### push message structure
-* token
-* email
-* os
-
-## MCB app structure
+## folder structure
 ionic
-backup
 bower_components (for ngCordova)
 tests (unit tests using karma)
 tests-helper (mock libraries)
 
-## setup
-make sure the source is updated in the backup folder - run the backup.sh script to do so
-run setup.sh script to install/update ionic, cordova, ngCordova and create an update skeleton
-run
-	ionic platform add ios
-	ionic platform add android
+## build
+Using shippable.com to build or use build-local.sh
 
 ## Plugins used
 ### ngCordova plugins

@@ -7,13 +7,14 @@
 #export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
 
 echo "Make sure you set AndroidManifest.xml android:debuggable to false!"
+NODEPATH=/home/shippable/workspace/src/github.com/yafraorg/yafra-mobile/node_modules
 cd ionic
-/home/shippable/workspace/src/github.com/yafraorg/yafra-mobile/node_modules/ionic/bin/ionic platform add android
-~/update-plugins.sh /home/shippable/workspace/src/github.com/yafraorg/yafra-mobile/node_modules/ionic/bin/ionic
-/home/shippable/workspace/src/github.com/yafraorg/yafra-mobile/node_modules/ionic/bin/ionic resources
-/home/shippable/workspace/src/github.com/yafraorg/yafra-mobile/node_modules/ionic/bin/ionic lib
-node_modules/gulp/bin/gulp.js
-/home/shippable/workspace/src/github.com/yafraorg/yafra-mobile/node_modules/ionic/bin/ionic build android
+$NODEPATH/ionic/bin/ionic platform add android
+~/update-plugins.sh $NODEPATH/ionic/bin/ionic
+$NODEPATH/ionic/bin/ionic resources
+$NODEPATH/ionic/bin/ionic lib
+$NODEPATH/gulp/bin/gulp.js
+$NODEPATH/ionic/bin/ionic build android
 cd platforms/android
 ant clean
 ant release
