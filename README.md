@@ -43,3 +43,6 @@ cordova plugin add org.apache.cordova.console
 ### other plugins
 cordova -d plugin add https://github.com/imhotep/MapKit --variable API_KEY="YOUR_API_KEY_FROM_GOOGLE"
 
+# Yafra links
+[Wiki](https://github.com/yafraorg/yafra/wiki)
+[Development Environment specifics](https://github.com/yafraorg/yafra/wiki/DevMobile)
