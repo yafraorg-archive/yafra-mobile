@@ -7,5 +7,5 @@ plugins/
 hooks/
 *.keystore
 *.sw*
-resources/android
-resources/ios
+resources/android/
+resources/ios/
