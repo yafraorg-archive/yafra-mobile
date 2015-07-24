@@ -1,4 +1,12 @@
 {
-  "name": "YafraTest",
-  "app_id": "org.yafra.mobileapp"
+  "name": "YafraMobile",
+  "app_id": "b5c9ebf0",
+  "gulpStartupTasks": [
+    "sass",
+    "watch"
+  ],
+  "watchPatterns": [
+    "www/**/*",
+    "!www/lib/**/*"
+  ]
 }

@@ -61,6 +61,8 @@ gulp.task('git-check', function(done) {
 
 /* YAFRA.org CUSTOM TAKS */
 
+
+/* JSHINT */
 gulp.task('lint', function() {
     return gulp.src('./www/js/*.js')
         .pipe(jshint())
@@ -68,7 +70,6 @@ gulp.task('lint', function() {
         .pipe(jshint.reporter('fail'))
         .pipe(count('jshint', 'files lint free'));
 });
-
 function count(taskName, message) {
     var fileCount = 0;
 
@@ -83,3 +84,26 @@ function count(taskName, message) {
     return through(countFiles, endStream);
 }
 
+/* KARMA unit tests */
+var Server = require('karma').Server;
+gulp.task('test', function (done) {
+    new Server({
+        configFile: __dirname + '/karma.conf.js',
+        singleRun: true
+    }, done).start();
+});
+
+/* CHANGELOG creation */
+gulp.task('changelog', function(done) {
+    var options = {
+        repository: 'https://github.com/yafraorg/yafra-mobile',
+        version: '1.0.0',
+        file: 'CHANGELOG.md'
+    };
+    if (SHA) {
+        options.from = SHA;
+    }
+    changelog(options, function(err, log) {
+        fs.writeFileSync(__dirname + '/CHANGELOG.md', log);
+    });
+});

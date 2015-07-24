@@ -29,9 +29,10 @@ Use the admin-install-upgrage.sh script which basically performs the following (
 ### build
 After install / upgrade run the build admin-build.sh which performs the following:
  * run gulp jshint
- * run gulp unit tests
- * run gulp e2e tests
+ * run gulp unit tests (karma)
+ * run gulp e2e tests (protractor)
  * build ios and android versions
+ * make changelog
  
 ### build online
 This project uses shippable.com to build (but without ios build)

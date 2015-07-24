@@ -8,7 +8,7 @@ describe("Test App Loading", function() {
 
 	var appdebug, appversion;
 
-	beforeEach(module("MCBApp"));
+	beforeEach(module("YafraApp"));
 
 	beforeEach(inject(function (_appdebug_, _appversion_) {
 		appdebug = _appdebug_;

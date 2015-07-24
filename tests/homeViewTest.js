@@ -4,8 +4,8 @@
 "use strict";
 describe("Test App Loading", function() {
 
-	beforeEach(module("MCBApp"));
-	beforeEach(module('MCBApp.services'));
+	beforeEach(module("YafraApp"));
+	beforeEach(module('YafraApp.services'));
 
 	var appdebug, $cordovaDevice, SysMsg;
 
