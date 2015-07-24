@@ -11,6 +11,7 @@ before_install:
   - sudo apt-get update -qq
   - sudo apt-get install -qq libstdc++6:i386 lib32z1
   - wget http://dl.google.com/android/android-sdk_r23.0.2-linux.tgz
+# - wget http://dl.google.com/android/android-sdk_r24.3.3-linux.tgz
   - tar -zxf android-sdk_r23.0.2-linux.tgz
   - export ANDROID_HOME=`pwd`/android-sdk-linux
   - export PATH=${PATH}:${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools

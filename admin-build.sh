@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
-node_modules/gulp/bin/gulp.js
+cd ionic/
+node_modules/.bin/gulp
+platforms/ios/cordova/clean
 ionic build ios
 ionic build android

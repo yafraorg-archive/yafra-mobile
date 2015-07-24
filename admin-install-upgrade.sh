@@ -74,7 +74,8 @@ ionic platform add android
 ionic resources
 # update ionic libraries
 ionic lib
-echo 'you need to update angular-resource manually and with the same angular release as this ionic relese uses'
+echo 'you need to update angular and angular-resource manually and'
+echo 'with the same angular release as this ionic relese uses - take a starter template and copy the angular directories over'
 cd ..
 
 #ionic start ionic-new sidemenu
