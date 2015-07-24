@@ -29,8 +29,8 @@ cp bower_components/ngCordova/dist/ng-cordova.js ionic/www/lib/ngCordova
 cp bower_components/ngCordova/dist/ng-cordova.min.js ionic/www/lib/ngCordova
 cp bower_components/ngCordova/dist/ng-cordova-mocks.js tests-helper/
 cp bower_components/ngCordova/dist/ng-cordova-mocks.min.js tests-helper/
-cp bower_components/ng-cordova-oauth/ng-cordova-oauth.js ionic/www/lib/ngCordova
-cp bower_components/ng-cordova-oauth/ng-cordova-oauth.min.js ionic/www/lib/ngCordova
+cp bower_components/ng-cordova-oauth/dist/ng-cordova-oauth.js ionic/www/lib/ngCordova
+cp bower_components/ng-cordova-oauth/dist/ng-cordova-oauth.min.js ionic/www/lib/ngCordova
 echo ' '
 echo 'bower update done - list bower installations:'
 bower list
@@ -38,15 +38,13 @@ bower list
 
 #
 # install / update ionic project (resources, platforms, ...)
+#
 echo ' '
 echo 'make backup and update ionic css and js stuff and gulp'
 cp -R ionic ionic-bup
-
 cd ionic/
 # install local npm apps
 npm install --save-dev gulp gulp-util bower gulp-concat gulp-sass gulp-minify-css gulp-rename shelljs
-# build resources like images
-ionic resources
 # remove existing platforms and plugins
 ionic platform rm ios
 ionic platform rm android
@@ -72,6 +70,8 @@ ionic platform add android
 #ionic plugin add https://github.com/EddyVerbruggen/Calendar-PhoneGap-Plugin.git
 #ionic plugin add https://github.com/christocracy/cordova-plugin-background-geolocation.git
 #ionic plugin add https://github.com/VitaliiBlagodir/cordova-plugin-datepicker.git
+# build resources like images
+ionic resources
 # update ionic libraries
 ionic lib
 echo 'you need to update angular-resource manually and with the same angular release as this ionic relese uses'

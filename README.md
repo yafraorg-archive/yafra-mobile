@@ -12,7 +12,7 @@ Yafra Mobile App
 
 ## folder structure
 ionic
-bower_components (for ngCordova)
+bower_components (for ngCordova only)
 tests (unit tests using karma)
 tests-helper (mock libraries)
 
