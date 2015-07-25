@@ -1,7 +1,7 @@
 language: node_js
 
 node_js:
-  - '0.10'
+  - '0.12'
 
 git:
  submodules: false
@@ -30,7 +30,6 @@ install:
   - cd ionic/
   - sudo npm install
   - cd ..
-  - ./admin-install-upgrade.sh
 
 script:
   - ./build-shippable.sh
