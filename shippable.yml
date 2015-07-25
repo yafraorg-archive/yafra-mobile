@@ -10,6 +10,8 @@ before_install:
   # ubuntu nodejs cordova ionic global install
   - sudo npm install -g cordova ionic
   - sudo ln -s /usr/lib/node_modules/ionic/bin/ionic /usr/bin/ionic
+  - ls /usr/lib/node_modules
+  - ls /usr/lib/node_modules/ionic/bin
   # android SDK
   - wget http://dl.google.com/android/android-sdk_r23.0.2-linux.tgz
 # - wget http://dl.google.com/android/android-sdk_r24.3.3-linux.tgz
@@ -19,7 +21,7 @@ before_install:
   - echo "y" | android update sdk -a --filter tools,platform-tools,build-tools-20.0.0,android-19 --no-ui --force
 
 install:
-  - ./admin-install-upgrade.sh
+  - sudo ./admin-install-upgrade.sh
 
 before_script: 
   - mkdir -p shippable/testresults
