@@ -16,7 +16,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-var McbFilters = angular.module('YafraApp.filters', []);
+var YafraFilters = angular.module('YafraApp.filters', []);
 
 /**
  * @ngdoc filter
@@ -42,10 +42,10 @@ var McbFilters = angular.module('YafraApp.filters', []);
  <div ng-bind-html="snippet | parseUrl | trustHtml"></div>
  </example>
  */
-McbFilters.filter('parseUrl', function() {
+YafraFilters.filter('parseUrl', function() {
 	'use strict';
-	var urls = /(\b(https?|ftp):\/\/[A-Z0-9+&@#\/%?=~_|!:,.;-]*[-A-Z0-9+&@#\/%=~_|])/gim
-	var emails = /(\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,6})/gim
+	var urls = /(\b(https?|ftp):\/\/[A-Z0-9+&@#\/%?=~_|!:,.;-]*[-A-Z0-9+&@#\/%=~_|])/gim;
+	var emails = /(\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,6})/gim;
 
 	return function (text) {
 		if (text.match(urls)) {
@@ -82,39 +82,9 @@ McbFilters.filter('parseUrl', function() {
  <div ng-bind-html="snippet | parseUrl | trustHtml"></div>
  </example>
  */
-McbFilters.filter('trustHtml', ['$sce', function($sce){
+YafraFilters.filter('trustHtml', ['$sce', function($sce){
 	'use strict';
 	return function(text) {
 		return $sce.trustAsHtml(text);
 	};
 }]);
-
-// formats a number as a latitude (e.g. 40.46... => "40°27'44"N")
-McbFilters.filter('lat', function () {
-	'use strict';
-	return function (input, decimals) {
-		if (!decimals) {decimals = 0;}
-		input = input * 1;
-		var ns = input > 0 ? "N" : "S";
-		input = Math.abs(input);
-		var deg = Math.floor(input);
-		var min = Math.floor((input - deg) * 60);
-		var sec = ((input - deg - min / 60) * 3600).toFixed(decimals);
-		return deg + "°" + min + "'" + sec + '"' + ns;
-	};
-});
-
-// formats a number as a longitude (e.g. -80.02... => "80°1'24"W")
-McbFilters.filter('lon', function () {
-	'use strict';
-	return function (input, decimals) {
-		if (!decimals) {decimals = 0;}
-		input = input * 1;
-		var ew = input > 0 ? "E" : "W";
-		input = Math.abs(input);
-		var deg = Math.floor(input);
-		var min = Math.floor((input - deg) * 60);
-		var sec = ((input - deg - min / 60) * 3600).toFixed(decimals);
-		return deg + "°" + min + "'" + sec + '"' + ew;
-	};
-});

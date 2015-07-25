@@ -25,7 +25,9 @@
     "karma-chrome-launcher": "*",
     "karma-firefox-launcher": "*",
     "karma-safari-launcher": "*",
-    "karma-jasmine": "*"
+    "karma-jasmine": "*",
+    "protractor": "*",
+    "gulp-angular-protractor": "*"
   },
   "cordovaPlugins": [
     "com.ionic.keyboard",
