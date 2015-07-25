@@ -24,11 +24,12 @@ before_install:
   - tar -zxf android-sdk_r24.3.3-linux.tgz
   - export ANDROID_HOME=`pwd`/android-sdk-linux
   - export PATH=${PATH}:${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools
-  - echo "y" | android update sdk -a --filter tools,platform-tools,build-tools-20.0.0,android-19 --no-ui --force
+  - echo "y" | android update sdk -a --filter tools,platform-tools,build-tools-22.0.1,android-22 --no-ui --force
 
 install:
   - cd ionic/
   - sudo npm install
+  - sudo npm rebuild node-sass
   - cd ..
 
 script:
