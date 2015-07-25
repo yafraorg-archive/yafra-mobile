@@ -14,6 +14,7 @@ before_install:
   # ubuntu updates and i386 files
   - sudo dpkg --add-architecture i386
   - sudo DEBIAN_FRONTEND=noninteractive apt-get update -qy
+  - sudo DEBIAN_FRONTEND=noninteractive apt-get install -qy wget
   - sudo DEBIAN_FRONTEND=noninteractive apt-get install -qy libc6:i386 libncurses5:i386 libstdc++6:i386 lib32z1
   # ubuntu nodejs cordova ionic global install
   - cd ..
