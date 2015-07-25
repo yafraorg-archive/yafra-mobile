@@ -16,7 +16,7 @@ before_install:
   - sudo DEBIAN_FRONTEND=noninteractive apt-get install -qy libstdc++6:i386 lib32z1
   # ubuntu nodejs cordova ionic global install
   - cd ..
-  - sudo npm install -g cordova ionic node-sass gulp-sass
+  - sudo npm install -g cordova ionic
   - cd -
   # android SDK
   #- wget http://dl.google.com/android/android-sdk_r23.0.2-linux.tgz
@@ -29,8 +29,6 @@ before_install:
 install:
   - cd ionic/
   - sudo npm install
-  - sudo npm rebuild node-sass
-  - sudo rm -rf node_modules/gulp-sass/node_modules/node-sass
   - cd ..
 
 script:
