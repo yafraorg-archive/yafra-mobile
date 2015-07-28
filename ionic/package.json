@@ -26,6 +26,7 @@
     "karma-firefox-launcher": "*",
     "karma-safari-launcher": "*",
     "karma-jasmine": "*",
+    "gulp-karma": "*",
     "protractor": "*",
     "gulp-angular-protractor": "*"
   },

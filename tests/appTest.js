@@ -3,29 +3,33 @@
  */
 
 /*global describe, expect, beforeEach, it */
-describe("Test App Loading", function() {
-	"use strict";
+describe('Yafra App test loading', function() {
+	'use strict';
 
 	var appdebug, appversion;
 
-	beforeEach(module("YafraApp"));
+	beforeEach(function() {
+        module('YafraApp');
+    });
 
-	beforeEach(inject(function (_appdebug_, _appversion_) {
-		appdebug = _appdebug_;
-		appversion = _appversion_;
-	}));
+    beforeEach(inject(function(_appdebug_, _appversion_) {
+        appdebug = _appdebug_;
+        appversion = _appversion_;
+        console.log('test: value of debug: ' + appdebug);
+    }));
 
-	describe("when invoked", function() {
 
-		it('should appdebug true', function() {
-			expect(appdebug).toBe(true);
-			console.log("test: value of debug flag: " + appdebug);
-		});
+    describe('constant appdebug', function() {
+            it('should be a true', function() {
+                expect(appdebug).toBe(true);
+                console.log('test: value of debug: ' + appdebug);
+            });
+    });
 
-		it('should appversion be set', function() {
-			expect(appversion).toBeDefined();
-			console.log("test: value of version: " + appversion);
-		});
-	});
-
+    describe('constant appversion', function() {
+            it('should appversion be set', function() {
+                expect(appversion).toBeDefined();
+                console.log('test: value of version: ' + appversion);
+            });
+    });
 });

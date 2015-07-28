@@ -5,7 +5,7 @@ module.exports = function(config) {
   config.set({
 
     // base path that will be used to resolve all patterns (eg. files, exclude)
-    basePath: '',
+    basePath: '/work/repos/yafra-mobile/',
 
 
     // frameworks to use
@@ -15,18 +15,19 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-		'www/lib/ionic/js/ionic.js',
-		'www/lib/ionic/js/angular/angular.js',
-		'www/lib/ionic/js/angular/angular-animate.js',
-		'www/lib/ionic/js/angular/angular-sanitize.js',
-		'www/lib/ionic/js/angular/angular-resource.js',
-		'www/lib/ionic/js/angular-ui/angular-ui-router.js',
-		'www/lib/ionic/js/ionic-angular.js',
-		'www/lib/ngCordova/ng-cordova.js',
-		'www/lib/ngCordova/ng-cordova-oauth.js',
-		'www/js/*.js',
-		'../tests-helper/angular-mocks.js',
-		'../tests/*Test.js'
+		'ionic/www/lib/ionic/js/ionic.js',
+		'ionic/www/lib/ionic/js/angular/angular.js',
+		'ionic/www/lib/ionic/js/angular/angular-animate.js',
+		'ionic/www/lib/ionic/js/angular/angular-sanitize.js',
+		'ionic/www/lib/ionic/js/angular/angular-resource.js',
+		'ionic/www/lib/ionic/js/angular-ui/angular-ui-router.js',
+		'ionic/www/lib/ionic/js/ionic-angular.js',
+		'ionic/www/lib/ngCordova/ng-cordova.js',
+		'ionic/www/lib/ngCordova/ng-cordova-oauth.js',
+		'ionic/www/js/app.js',
+        'ionic/www/templates/*.html',
+		'tests-helper/angular-mocks.js',
+		'tests/*Test.js'
     ],
 
 
@@ -61,7 +62,7 @@ module.exports = function(config) {
 
 
     // enable / disable watching file and executing tests whenever any file changes
-    autoWatch: false,
+    autoWatch: true,
 
 
     // start these browsers
@@ -71,6 +72,6 @@ module.exports = function(config) {
 
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits
-    singleRun: true
+    singleRun: false
   });
 };

@@ -25,7 +25,7 @@
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
 // Declare app level module which depends on filters, and services
-var CliqueApp = angular.module('YafraApp', [
+var MyYafraApp = angular.module('YafraApp', [
 	'ionic',
 	'ngResource',
 	'ngCordova',
@@ -41,15 +41,15 @@ var CliqueApp = angular.module('YafraApp', [
 //});
 
 // Version
-CliqueApp.constant('appversion', '1.0.1');
+MyYafraApp.constant('appversion', '1.0.1');
 // Debug mode
-CliqueApp.constant('appdebug', true);
+MyYafraApp.constant('appdebug', true);
 // Server URL
-CliqueApp.constant('yafragit', 'https://github.com/yafraorg');
-CliqueApp.constant('yafrawiki', 'https://github.com/yafraorg/yafra/wiki/');
+MyYafraApp.constant('yafragit', 'https://github.com/yafraorg');
+MyYafraApp.constant('yafrawiki', 'https://github.com/yafraorg/yafra/wiki/');
 
 // Start
-CliqueApp.run(['$ionicPlatform', '$cordovaPush', 'SysMsg', 'appversion', 'appdebug', 'yafragit', function($ionicPlatform, $cordovaPush, SysMsg, appversion, appdebug, yafragit) {
+MyYafraApp.run(['$ionicPlatform', '$cordovaPush', 'SysMsg', 'appversion', 'appdebug', 'yafragit', function($ionicPlatform, $cordovaPush, SysMsg, appversion, appdebug, yafragit) {
     $ionicPlatform.ready(function() {
 		SysMsg.logConsole('=====================================================================================');
 		SysMsg.logConsole('YAFRA.org mobile app');
@@ -105,7 +105,7 @@ CliqueApp.run(['$ionicPlatform', '$cordovaPush', 'SysMsg', 'appversion', 'appdeb
 /**
  * Routing table including associated controllers.
  */
-CliqueApp.config(['$stateProvider', '$urlRouterProvider', '$ionicConfigProvider', function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
+MyYafraApp.config(['$stateProvider', '$urlRouterProvider', '$ionicConfigProvider', function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
 
 	$stateProvider
 		.state('menu', {url: '/yafra', abstract: true, templateUrl: 'templates/menu.html', controller: 'StartCtrl'})
