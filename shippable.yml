@@ -19,7 +19,7 @@ before_install:
   - sudo DEBIAN_FRONTEND=noninteractive apt-get install -qy libc6:i386 libncurses5:i386 libstdc++6:i386 lib32z1
   # ubuntu nodejs cordova ionic global install
   - sudo curl https://raw.githubusercontent.com/creationix/nvm/v0.24.0/install.sh | bash
-  - sudo source ~/.nvm/nvm.sh && sudo nvm use 0.12
+  - source ~/.nvm/nvm.sh && nvm use 0.12
   - cd ..
   - sudo npm install -g cordova ionic
   - cd -
