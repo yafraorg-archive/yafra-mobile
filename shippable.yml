@@ -12,16 +12,18 @@ before_install:
   - pwd
   - ls
   # ubuntu updates and i386 files
-  - dpkg --add-architecture i386
-  - DEBIAN_FRONTEND=noninteractive apt-get update -qy
-  - DEBIAN_FRONTEND=noninteractive apt-get upgrade -qy
-  - DEBIAN_FRONTEND=noninteractive apt-get install -qy wget curl default-jdk firefox
-  - DEBIAN_FRONTEND=noninteractive apt-get install -qy libc6:i386 libncurses5:i386 libstdc++6:i386 lib32z1
+  - sudo dpkg --add-architecture i386
+  - sudo DEBIAN_FRONTEND=noninteractive apt-get update -qy
+  - sudo DEBIAN_FRONTEND=noninteractive apt-get upgrade -qy
+  - sudo DEBIAN_FRONTEND=noninteractive apt-get install -qy wget curl default-jdk firefox
+  - sudo DEBIAN_FRONTEND=noninteractive apt-get install -qy libc6:i386 libncurses5:i386 libstdc++6:i386 lib32z1
+  - curl -sL https://deb.nodesource.com/setup_0.12 | sudo bash -
+  - sudo apt-get install -y nodejs
   # ubuntu nodejs cordova ionic global install
   #- sudo curl https://raw.githubusercontent.com/creationix/nvm/v0.24.0/install.sh | bash
   #- source ~/.nvm/nvm.sh && nvm use 0.12
   - cd ..
-  - npm install -g cordova ionic
+  - sudo npm install -g cordova ionic
   - cd -
   # android SDK
   #- wget http://dl.google.com/android/android-sdk_r23.0.2-linux.tgz
@@ -33,7 +35,7 @@ before_install:
 
 install:
   - cd ionic/
-  - npm install
+  - sudo npm install
   - cd ..
 
 script:
