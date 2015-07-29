@@ -35,3 +35,6 @@ install:
 
 script:
   - ./build-shippable.sh
+  - cd ionic/
+  - node_modules/.bin/karma start karma.conf.js --log-level debug --single-run
+  - cd ..

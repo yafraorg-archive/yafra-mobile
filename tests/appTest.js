@@ -15,21 +15,20 @@ describe('Yafra App test loading', function() {
     beforeEach(inject(function(_appdebug_, _appversion_) {
         appdebug = _appdebug_;
         appversion = _appversion_;
-        console.log('test: value of debug: ' + appdebug);
     }));
 
 
     describe('constant appdebug', function() {
-            it('should be a true', function() {
-                expect(appdebug).toBe(true);
-                console.log('test: value of debug: ' + appdebug);
-            });
+        it('should be a true', function() {
+            console.log('test: value of debug: ' + appdebug);
+            expect(appdebug).toBe(true);
+        });
     });
 
     describe('constant appversion', function() {
-            it('should appversion be set', function() {
-                expect(appversion).toBeDefined();
-                console.log('test: value of version: ' + appversion);
-            });
+        it('should be set', function() {
+            console.log('test: value of version: ' + appversion);
+            expect(appversion).toBeDefined();
+        });
     });
 });

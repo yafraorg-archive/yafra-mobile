@@ -85,16 +85,8 @@ function count(taskName, message) {
 }
 
 /* KARMA unit tests */
-var Server = require('karma').Server;
-gulp.task('test', function (done) {
-    new Server({
-        configFile: __dirname + '/karma.conf.js',
-        singleRun: true
-    }, done).start();
-});
-
 var karma = require('gulp-karma');
-gulp.task('test2', function() {
+gulp.task('tests', function() {
     // Be sure to return the stream
     // NOTE: Using the fake './foobar' so as to run the files
     // listed in karma.conf.js INSTEAD of what was passed to

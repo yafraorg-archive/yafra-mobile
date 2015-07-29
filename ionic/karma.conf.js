@@ -12,6 +12,15 @@ module.exports = function(config) {
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
     frameworks: ['jasmine'],
 
+    plugins:[
+      'karma-jasmine',
+      'karma-coverage',
+      'karma-junit-reporter',
+      'karma-phantomjs-launcher',
+      'karma-chrome-launcher',
+      'karma-firefox-launcher'
+    ],
+
 
     // list of files / patterns to load in the browser
     files: [
@@ -24,9 +33,9 @@ module.exports = function(config) {
 		'ionic/www/lib/ionic/js/ionic-angular.js',
 		'ionic/www/lib/ngCordova/ng-cordova.js',
 		'ionic/www/lib/ngCordova/ng-cordova-oauth.js',
-		'ionic/www/js/app.js',
+        'tests-helper/angular-mocks.js',
+		'ionic/www/js/*.js',
         'ionic/www/templates/*.html',
-		'tests-helper/angular-mocks.js',
 		'tests/*Test.js'
     ],
 
@@ -39,15 +48,26 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
+        'ionic/www/js/*.js': 'coverage'
     },
 
 
     // test results reporter to use
     // possible values: 'dots', 'progress'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters: ['progress'],
+    reporters: ['dots', 'junit', 'progress', 'coverage'],
 
-
+      // subdir is used to avoid the browser name as directory which is defualt
+    coverageReporter: {
+        type: 'cobertura',
+        dir: 'testresults/',
+        subdir: '.'
+    },
+    junitReporter: {
+        outputDir: 'testresults/',
+        suite: '',
+       outputFile: 'test-results.xml'
+    },
     // web server port
     port: 9876,
 
@@ -62,16 +82,17 @@ module.exports = function(config) {
 
 
     // enable / disable watching file and executing tests whenever any file changes
-    autoWatch: true,
+    autoWatch: false,
 
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: ['Firefox'],
+    //browsers: ['Firefox'],
+    browsers: ['PhantomJS'],
 
 
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits
-    singleRun: false
+    singleRun: true
   });
 };
