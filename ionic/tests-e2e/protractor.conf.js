@@ -23,11 +23,11 @@ exports.config = {
     onPrepare: function() {
         require('jasmine-reporters');
         jasmine.getEnv().addReporter(
-            new jasmine.JUnitXmlReporter('../testresults/testresults', true, true, 'junit')
+            new jasmine.JUnitXmlReporter('testresults', true, true, 'junit')
             );
         // Add a screenshot reporter and store screenshots to `/tmp/screnshots`:
         jasmine.getEnv().addReporter(new ScreenShotReporter({
-            baseDirectory: '../shippable/screenshots'
+            baseDirectory: 'testresults/screenshots'
             }));
     }
 };

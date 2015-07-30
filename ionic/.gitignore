@@ -9,3 +9,4 @@ hooks/
 *.sw*
 resources/android/
 resources/ios/
+testresults

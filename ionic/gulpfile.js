@@ -117,9 +117,9 @@ gulp.task('webdriver_update', webdriver_update);
 gulp.task('webdriver_standalone', webdriver_standalone);
 // Setting up the test task
 gulp.task('protractor', ['webdriver_update'], function(cb) {
-    gulp.src([__dirname + '/../e2e-tests/scenarios.js'])
+    gulp.src([__dirname + '/tests-e2e/scenarios.js'])
         .pipe(protractor({
-            configFile: __dirname + '/../e2e-tests/protractor.conf.js'}))
+            configFile: __dirname + '/tests-e2e/protractor.conf.js'}))
         .on('error', function(e) { console.log(e)
         }).on('end', cb);
 });

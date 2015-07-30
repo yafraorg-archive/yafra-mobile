@@ -5,7 +5,7 @@ module.exports = function(config) {
   config.set({
 
     // base path that will be used to resolve all patterns (eg. files, exclude)
-    basePath: '/work/repos/yafra-mobile/',
+    basePath: '',
 
 
     // frameworks to use
@@ -24,18 +24,18 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-		'ionic/www/lib/ionic/js/ionic.js',
-		'ionic/www/lib/ionic/js/angular/angular.js',
-		'ionic/www/lib/ionic/js/angular/angular-animate.js',
-		'ionic/www/lib/ionic/js/angular/angular-sanitize.js',
-		'ionic/www/lib/ionic/js/angular/angular-resource.js',
-		'ionic/www/lib/ionic/js/angular-ui/angular-ui-router.js',
-		'ionic/www/lib/ionic/js/ionic-angular.js',
-		'ionic/www/lib/ngCordova/ng-cordova.js',
-		'ionic/www/lib/ngCordova/ng-cordova-oauth.js',
+		'www/lib/ionic/js/ionic.js',
+		'www/lib/ionic/js/angular/angular.js',
+		'www/lib/ionic/js/angular/angular-animate.js',
+		'www/lib/ionic/js/angular/angular-sanitize.js',
+		'www/lib/ionic/js/angular/angular-resource.js',
+		'www/lib/ionic/js/angular-ui/angular-ui-router.js',
+		'www/lib/ionic/js/ionic-angular.js',
+		'www/lib/ngCordova/ng-cordova.js',
+		'www/lib/ngCordova/ng-cordova-oauth.js',
         'tests-helper/angular-mocks.js',
-		'ionic/www/js/*.js',
-        'ionic/www/templates/*.html',
+		'www/js/*.js',
+        'www/templates/*.html',
 		'tests/*Test.js'
     ],
 
