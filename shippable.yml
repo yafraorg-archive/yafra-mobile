@@ -39,4 +39,5 @@ script:
   - ./build-shippable.sh
   - cd ionic/
   - node_modules/.bin/karma start karma.conf.js --log-level debug --single-run
+  - node_modules/.bin/conventional-changelog -i CHANGELOG.md --overwrite
   - cd ..

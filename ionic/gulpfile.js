@@ -3,12 +3,9 @@ var gutil = require('gulp-util');
 var bower = require('bower');
 var concat = require('gulp-concat');
 var sass = require('gulp-sass');
-var jshint = require('gulp-jshint');
-var stylish = require('jshint-stylish');
 var minifyCss = require('gulp-minify-css');
 var rename = require('gulp-rename');
 var sh = require('shelljs');
-var through = require('through');
 
 var paths = {
     js: ['./www/js/**/*.js', '../tests/**/*.js'],
@@ -17,52 +14,55 @@ var paths = {
     sass: ['./scss/**/*.scss']
 };
 
-
 gulp.task('default', ['sass', 'lint']);
 
 gulp.task('sass', function(done) {
-  gulp.src('./scss/ionic.app.scss')
-      .pipe(sass({
-        errLogToConsole: true
-      }))
-      .pipe(gulp.dest('./www/css/'))
-      .pipe(minifyCss({
-        keepSpecialComments: 0
-      }))
-      .pipe(rename({ extname: '.min.css' }))
-      .pipe(gulp.dest('./www/css/'))
-      .on('end', done);
+    gulp.src('./scss/ionic.app.scss')
+        .pipe(sass({
+            errLogToConsole: true
+        }))
+        .pipe(gulp.dest('./www/css/'))
+        .pipe(minifyCss({
+            keepSpecialComments: 0
+        }))
+        .pipe(rename({ extname: '.min.css' }))
+        .pipe(gulp.dest('./www/css/'))
+        .on('end', done);
 });
 
 gulp.task('watch', function() {
-  gulp.watch(paths.sass, ['sass']);
+    gulp.watch(paths.sass, ['sass']);
 });
 
 gulp.task('install', ['git-check'], function() {
-  return bower.commands.install()
-      .on('log', function(data) {
-        gutil.log('bower', gutil.colors.cyan(data.id), data.message);
-      });
+    return bower.commands.install()
+        .on('log', function(data) {
+            gutil.log('bower', gutil.colors.cyan(data.id), data.message);
+        });
 });
 
 gulp.task('git-check', function(done) {
-  if (!sh.which('git')) {
-    console.log(
-        '  ' + gutil.colors.red('Git is not installed.'),
-        '\n  Git, the version control system, is required to download Ionic.',
-        '\n  Download git here:', gutil.colors.cyan('http://git-scm.com/downloads') + '.',
-        '\n  Once git is installed, run \'' + gutil.colors.cyan('gulp install') + '\' again.'
-    );
-    process.exit(1);
-  }
-  done();
+    if (!sh.which('git')) {
+        console.log(
+            '  ' + gutil.colors.red('Git is not installed.'),
+            '\n  Git, the version control system, is required to download Ionic.',
+            '\n  Download git here:', gutil.colors.cyan('http://git-scm.com/downloads') + '.',
+            '\n  Once git is installed, run \'' + gutil.colors.cyan('gulp install') + '\' again.'
+        );
+        process.exit(1);
+    }
+    done();
 });
+
 
 
 /* YAFRA.org CUSTOM TAKS */
 
 
 /* JSHINT */
+var jshint = require('gulp-jshint');
+var stylish = require('jshint-stylish');
+var through = require('through');
 gulp.task('lint', function() {
     return gulp.src('./www/js/*.js')
         .pipe(jshint())
@@ -126,16 +126,11 @@ gulp.task('protractor', ['webdriver_update'], function(cb) {
 
 
 /* CHANGELOG creation */
-gulp.task('changelog', function(done) {
-    var options = {
-        repository: 'https://github.com/yafraorg/yafra-mobile',
-        version: '1.0.0',
-        file: 'CHANGELOG.md'
-    };
-    if (SHA) {
-        options.from = SHA;
-    }
-    changelog(options, function(err, log) {
-        fs.writeFileSync(__dirname + '/CHANGELOG.md', log);
-    });
+var conventionalChangelog = require('conventional-changelog');
+var fs = require('fs');
+gulp.task('changelog', function () {
+    return conventionalChangelog({
+        preset: 'angular'
+    })
+        .pipe(fs.createWriteStream('CHANGELOG.md'));
 });
