@@ -1,6 +1,3 @@
-/*
- * YAFRA mobile app based on Ionic Framework
- */
 {
   "name": "YAFRA-Mobile",
   "version": "1.0.0",
@@ -70,7 +67,3 @@
     "android"
   ]
 }
-/*
-    "chai": "^1.9.1",
-    "mocha": "^1.18.2",
-*/

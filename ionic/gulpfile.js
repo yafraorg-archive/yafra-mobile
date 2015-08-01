@@ -126,11 +126,14 @@ gulp.task('protractor', ['webdriver_update'], function(cb) {
 
 
 /* CHANGELOG creation */
-var conventionalChangelog = require('conventional-changelog');
-var fs = require('fs');
+var conventionalChangelog = require('gulp-conventional-changelog');
 gulp.task('changelog', function () {
-    return conventionalChangelog({
-        preset: 'angular'
+    return gulp.src('CHANGELOG.md', {
+        buffer: false
     })
-        .pipe(fs.createWriteStream('CHANGELOG.md'));
+        .pipe(conventionalChangelog({
+            preset: "angular",
+            pkg: __dirname
+        }))
+        .pipe(gulp.dest('./'));
 });
