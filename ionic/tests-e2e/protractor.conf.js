@@ -14,17 +14,19 @@ exports.config = {
 
   baseUrl: 'http://localhost:8081/',
 
-  framework: 'jasmine',
+  framework: 'jasmine2',
 
   jasmineNodeOpts: {
     defaultTimeoutInterval: 30000
   },
 
     onPrepare: function() {
-        require('jasmine-reporters');
-        jasmine.getEnv().addReporter(
-            new jasmine.JUnitXmlReporter('testresults', true, true, 'junit')
-            );
+        var jasmineReporters = require('jasmine-reporters');
+        jasmine.getEnv().addReporter(new jasmineReporters.JUnitXmlReporter({
+            consolidateAll: true,
+            savePath: 'testresults',
+            filePrefix: 'xmloutput'
+        }));
         // Add a screenshot reporter and store screenshots to `/tmp/screnshots`:
         jasmine.getEnv().addReporter(new ScreenShotReporter({
             baseDirectory: 'testresults/screenshots'

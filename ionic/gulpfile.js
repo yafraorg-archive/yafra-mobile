@@ -14,7 +14,7 @@ var paths = {
     sass: ['./scss/**/*.scss']
 };
 
-gulp.task('default', ['sass', 'lint']);
+gulp.task('default', ['sass']);
 
 gulp.task('sass', function(done) {
     gulp.src('./scss/ionic.app.scss')
@@ -58,6 +58,8 @@ gulp.task('git-check', function(done) {
 
 /* YAFRA.org CUSTOM TAKS */
 
+gulp.task('yafra', ['sass', 'lint', 'karma', 'protractor', 'changelog']);
+
 
 /* JSHINT */
 var jshint = require('gulp-jshint');
@@ -86,7 +88,7 @@ function count(taskName, message) {
 
 /* KARMA unit tests */
 var karma = require('gulp-karma');
-gulp.task('tests', function() {
+gulp.task('karma', function() {
     // Be sure to return the stream
     // NOTE: Using the fake './foobar' so as to run the files
     // listed in karma.conf.js INSTEAD of what was passed to
@@ -116,14 +118,24 @@ gulp.task('webdriver_update', webdriver_update);
 // seleniumServerJar in your protractor.conf.js
 gulp.task('webdriver_standalone', webdriver_standalone);
 // Setting up the test task
+var webserver = require('gulp-webserver');
+var exit = require('gulp-exit');
+var myhttp;
 gulp.task('protractor', ['webdriver_update'], function(cb) {
+    gulp.src('www')
+        .pipe(webserver({
+            livereload: true,
+            fallback: 'index.html',
+            port: 8081,
+            directoryListing: true,
+            open: false
+        }));
     gulp.src([__dirname + '/tests-e2e/scenarios.js'])
         .pipe(protractor({
             configFile: __dirname + '/tests-e2e/protractor.conf.js'}))
-        .on('error', function(e) { console.log(e)
-        }).on('end', cb);
+        .pipe(exit())
+        .on('error', function(e) { console.log(e) });
 });
-
 
 /* CHANGELOG creation */
 var conventionalChangelog = require('gulp-conventional-changelog');

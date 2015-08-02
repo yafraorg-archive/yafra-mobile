@@ -39,5 +39,9 @@ script:
   - ./build-shippable.sh
   - cd ionic/
   - node_modules/.bin/karma start karma.conf.js --log-level debug --single-run
+  - export DISPLAY=:99.0
+  - sh -e /etc/init.d/xvfb start
+  - node_modules/.bin/http-server -p 8081 www/ &
+  - sleep 1
   - node_modules/.bin/conventional-changelog -i CHANGELOG.md --overwrite
   - cd ..

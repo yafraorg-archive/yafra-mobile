@@ -1,3 +1,23 @@
+<a name=""></a>
+#  (2015-08-02)
+
+
+### Bug Fixes
+
+* syntax error in package.json 3e79730
+
+
+
+<a name=""></a>
+#  (2015-08-01)
+
+
+### Bug Fixes
+
+* syntax error in package.json 3e79730
+
+
+
 <a name="1.0.0"></a>
 # 1.0.0 (2015-08-01)
 

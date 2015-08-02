@@ -19,7 +19,7 @@ describe('default redirect', function() {
 
 
     it('should have a title', function() {
-      expect(browser.getTitle()).toEqual('YAPKI Front End');
+      expect(browser.getTitle()).toEqual('YAFRA APP');
     });
 
   });
