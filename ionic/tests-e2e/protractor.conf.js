@@ -1,4 +1,4 @@
-var ScreenShotReporter = require('protractor-screenshot-reporter');
+var ScreenShotReporter = require('protractor-jasmine2-screenshot-reporter');
 
 exports.config = {
   allScriptsTimeout: 11000,
@@ -29,7 +29,7 @@ exports.config = {
         }));
         // Add a screenshot reporter and store screenshots to `/tmp/screnshots`:
         jasmine.getEnv().addReporter(new ScreenShotReporter({
-            baseDirectory: 'testresults/screenshots'
+            dest: 'testresults/screenshots'
             }));
     }
 };

@@ -116,7 +116,7 @@ YafraService.factory('SysMsg', ['appdebug', '$cordovaDevice', '$cordovaDialogs',
 /**
  * Check if CODE is available and valid
  */
-YafraService.factory('Push', ['$rootScope', '$state', 'SysMsg', '$cordovaPush', 'MsgIndicator', function ($rootScope, $state, SysMsg, $cordovaPush, MsgIndicator) {
+YafraService.factory('PushService', ['$rootScope', '$state', 'SysMsg', '$cordovaPush', 'MsgIndicator', function ($rootScope, $state, SysMsg, $cordovaPush, MsgIndicator) {
 	'use strict';
 	var yafradevice = {
 		'registered': false,

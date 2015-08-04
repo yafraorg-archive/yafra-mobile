@@ -29,9 +29,9 @@ YafraController.controller('DefaultCtrl', function ($scope) {
 /**
  * Default controller
  */
-YafraController.controller('StartCtrl', function ($scope, PushService) {
+YafraController.controller('StartCtrl', ['$scope', 'PushService', function ($scope, PushService) {
 	'use strict';
-});
+}]);
 
 /**
  * A simple help controller to show an external URL.

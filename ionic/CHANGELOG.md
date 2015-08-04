@@ -1,21 +1,11 @@
-<a name=""></a>
+<a name="1.0.0-1"></a>
 #  (2015-08-02)
 
 
 ### Bug Fixes
 
-* syntax error in package.json 3e79730
-
-
-
-<a name=""></a>
-#  (2015-08-01)
-
-
-### Bug Fixes
-
-* syntax error in package.json 3e79730
-
+* syntax error in package.json
+ ([3e79730](https://github.com/yafraorg/yafra-mobile/commit/3e79730))
 
 
 <a name="1.0.0"></a>
