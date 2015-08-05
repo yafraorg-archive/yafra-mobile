@@ -10,7 +10,6 @@ before_install:
   #- git fetch --all
   #- git reset --hard origin/master
   - pwd
-  - mkdir
   - ls
   # ubuntu updates and i386 files
   - sudo dpkg --add-architecture i386
@@ -37,11 +36,7 @@ install:
   - cd ..
 
 before_script:
-  - cd
   - pwd
-  - mkdir -p shippable/testresults
-  - mkdir -p shippable/codecoverage
-  - mkdir -p shippable/screenshots
   - export DISPLAY=:99.0
   - sudo Xvfb :99 -ac &
   - ionic/node_modules/.bin/http-server -p 8081 www/ &
@@ -56,5 +51,5 @@ script:
   - node_modules/.bin/conventional-changelog -i CHANGELOG.md --overwrite
   # TODO copy test files to correct location for shippable
   - ls testresults/
-  - cp testresults/xmloutput.xml ~/shippable/testresults/.
-  - cp testresults/cobertura-coverage.xml ~/shippable/codecoverage/.
+  - cp testresults/xmloutput.xml ../shippable/testresults/.
+  - cp testresults/cobertura-coverage.xml ../shippable/codecoverage/.
