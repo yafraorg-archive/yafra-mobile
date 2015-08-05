@@ -1,9 +1,13 @@
-<a name="1.0.0-1"></a>
-#  (2015-08-02)
+<a name=""></a>
+#  (2015-08-04)
 
 
 ### Bug Fixes
 
+* migrated to jasmine2 screenreporter
+ ([2a67c26](https://github.com/yafraorg/yafra-mobile/commit/2a67c26))
+* start local http before protractor - done within gulp
+ ([665e39b](https://github.com/yafraorg/yafra-mobile/commit/665e39b))
 * syntax error in package.json
  ([3e79730](https://github.com/yafraorg/yafra-mobile/commit/3e79730))
 

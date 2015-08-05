@@ -74,7 +74,7 @@
     "globals": {
       "angular"     : true,
       "define"      : false,
-      "jasmine"     : false,
+      "jasmine"     : true,
       "require"     : false,
       "exports"     : false,
       "module"      : false,

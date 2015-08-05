@@ -17,7 +17,12 @@ exports.config = {
   framework: 'jasmine2',
 
   jasmineNodeOpts: {
-    defaultTimeoutInterval: 30000
+      // If true, print colors to the terminal.
+      showColors: true,
+      // Default time to wait in ms before a test fails.
+      defaultTimeoutInterval: 30000,
+      // Function called to print jasmine results.
+      print: function() {}
   },
 
     onPrepare: function() {

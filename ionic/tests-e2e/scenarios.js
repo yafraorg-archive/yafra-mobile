@@ -10,30 +10,20 @@ describe('default page check', function() {
     expect(browser.getLocationAbsUrl()).toMatch("/yafra/home");
   });
 
-
-  describe('title of first page', function() {
-
-    beforeEach(function() {
-      browser.get('index.html#/yafra/home');
-    });
-
-
-    it('should have a title', function() {
-      expect(browser.getTitle()).toEqual('YAFRA');
-    });
-
+  it('should have a title', function() {
+    expect(browser.getTitle()).toEqual('YAFRA');
   });
 
 });
 
-describe('git view page check', function() {
+/*
+describe('git page check', function() {
 
-    beforeEach(function() {
-        browser.get('index.html#/yafra/git');
+    browser.get('index.html#/yafra/git');
+
+        it('should change to git issues', function () {
+            //element(by.css('.yafragitmenu')).click();
+            expect(browser.getCurrentUrl()).toMatch("/yafra/git");
+        });
     });
-
-    it('should have a title', function() {
-        expect(browser.getTitle()).toEqual('Git Issues');
-    });
-
-});
+*/
