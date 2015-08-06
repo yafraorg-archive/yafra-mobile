@@ -38,6 +38,7 @@
     "karma-phantomjs-launcher": "*",
     "karma-safari-launcher": "*",
     "phantomjs": "*",
+    "capturejs": "*",
     "protractor": "*",
     "protractor-jasmine2-screenshot-reporter": "*",
     "superagent": "^0.18.0",
