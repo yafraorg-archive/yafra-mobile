@@ -39,7 +39,7 @@ before_script:
   - pwd
   - export DISPLAY=:99.0
   - sudo Xvfb :99 -ac &
-  - ionic/node_modules/.bin/http-server -p 8081 www/ &
+  - ionic/node_modules/.bin/http-server -p 8081 ionic/www/ &
   - sleep 1
 
 script:
