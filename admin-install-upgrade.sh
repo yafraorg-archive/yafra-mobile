@@ -22,17 +22,18 @@ npm list -g --depth=0
 #
 echo ' '
 echo 'start bower ngCordova update now'
+rm -rf bower_components/
 # ng-cordova install/update
 bower -config.interactive=false install ngCordova
 bower -config.interactive=false install ng-cordova-oauth
-bower -config.interactive=false install angular-mocks#1.3.13
+bower -config.interactive=false install angular-mocks#1.4.3
 cp bower_components/ngCordova/dist/ng-cordova.js ionic/www/lib/ngCordova
 cp bower_components/ngCordova/dist/ng-cordova.min.js ionic/www/lib/ngCordova
-cp bower_components/ngCordova/dist/ng-cordova-mocks.js tests-helper/
-cp bower_components/ngCordova/dist/ng-cordova-mocks.min.js tests-helper/
+cp bower_components/ngCordova/dist/ng-cordova-mocks.js ionic/tests-helper/
+cp bower_components/ngCordova/dist/ng-cordova-mocks.min.js ionic/tests-helper/
 cp bower_components/ng-cordova-oauth/dist/ng-cordova-oauth.js ionic/www/lib/ngCordova
 cp bower_components/ng-cordova-oauth/dist/ng-cordova-oauth.min.js ionic/www/lib/ngCordova
-cp bower_components/angular-mocks/angular-mocks.js tests-helper/
+cp bower_components/angular-mocks/angular-mocks.js ionic/tests-helper/
 echo ' '
 echo 'bower update done - list bower installations:'
 bower list

@@ -1,4 +1,20 @@
-<a name=""></a>
+<a name="1.0.2"></a>
+#  (2015-08-24)
+
+
+### Bug Fixes
+
+* changed the shippable config for ubuntu 14.04 ([2a67c26](https://github.com/yafraorg/yafra-mobile/commit/8892d0e))
+* fix with the shippable config for ubuntu 14.04 ([2a67c26](https://github.com/yafraorg/yafra-mobile/commit/e74d2bd))
+* migrated to jasmine2 screenreporter ([2a67c26](https://github.com/yafraorg/yafra-mobile/commit/2a67c26))
+* start local http before protractor - done within gulp ([2a67c26](https://github.com/yafraorg/yafra-mobile/commit/665e39b))
+* syntax error in package.json ([2a67c26](https://github.com/yafraorg/yafra-mobile/commit/3e79730))
+* updated the shippable config to complete with protractor ([2a67c26](https://github.com/yafraorg/yafra-mobile/commit/4a1c0e6))
+* wrong dir for http-server ([2a67c26](https://github.com/yafraorg/yafra-mobile/commit/52bc122))
+
+
+
+<a name="1.0.1"></a>
 #  (2015-08-04)
 
 

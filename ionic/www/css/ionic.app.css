@@ -5360,6 +5360,12 @@ ion-tabs.tabs-color-active-dark .tab-item {
   cursor: default;
   pointer-events: none; }
 
+.nav-bar-tabs-top.hide ~ .view-container .tabs-top .tabs {
+  top: 0; }
+
+.pane[hide-nav-bar="true"] .has-tabs-top {
+  top: 49px; }
+
 /**
  * Menus
  * --------------------------------------------------
@@ -5387,7 +5393,8 @@ ion-tabs.tabs-color-active-dark .tab-item {
 
 .menu-open .menu-content .pane,
 .menu-open .menu-content .scroll-content {
-  pointer-events: none; }
+  pointer-events: none;
+  overflow: hidden; }
 
 .grade-b .menu-content,
 .grade-c .menu-content {
@@ -7939,7 +7946,7 @@ input:checked + .checkbox-icon:after {
     top: 0;
     bottom: 0;
     right: 0;
-    padding: 14px 48px 16px 16px;
+    padding: 0 48px 0 16px;
     max-width: 65%;
     border: none;
     background: #fff;
