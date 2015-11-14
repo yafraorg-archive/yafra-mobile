@@ -51,21 +51,25 @@
   "cordovaPlugins": [
     "com.ionic.keyboard",
     "cordova-plugin-camera",
-    "cordova-plugin-console",
+    "org.apache.cordova.console",
     "cordova-plugin-contacts",
     "cordova-plugin-device",
-    "cordova-plugin-whitelist",
-    "cordova-plugin-splashscreen",
     "cordova-plugin-dialogs",
     "cordova-plugin-file",
     "cordova-plugin-file-transfer",
     "cordova-plugin-geolocation",
     "cordova-plugin-inappbrowser",
+    "cordova-plugin-splashscreen",
     "cordova-plugin-statusbar",
-    "https://github.com/phonegap-build/PushPlugin.git",
-    "https://github.com/EddyVerbruggen/Calendar-PhoneGap-Plugin.git",
-    "https://github.com/VitaliiBlagodir/cordova-plugin-datepicker.git",
-    "https://github.com/christocracy/cordova-plugin-background-geolocation.git"
+    "cordova-plugin-whitelist",
+    {
+      "locator": "https://github.com/phonegap-build/PushPlugin.git",
+      "id": "com.phonegap.plugins.PushPlugin"
+    },
+    {
+      "locator": "https://github.com/EddyVerbruggen/Calendar-PhoneGap-Plugin.git",
+      "id": "cordova-plugin-calendar"
+    }
   ],
   "cordovaPlatforms": [
     "ios",

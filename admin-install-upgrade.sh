@@ -46,35 +46,36 @@ echo ' '
 echo 'make backup and update ionic css and js stuff and gulp'
 cp -R ionic ionic-bup
 cd ionic/
+mkdir -p hooks
 # install local npm apps
-npm install --save-dev gulp gulp-util bower gulp-concat gulp-sass gulp-minify-css gulp-rename shelljs
+npm install
 # remove existing platforms and plugins
 ionic platform rm ios
 ionic platform rm android
 rm -rf plugins/*
+
 # add platforms
 ionic platform add ios
 ionic platform add android
-# add plugins - moved to plugins.json
-#ionic plugin add com.ionic.keyboard
-#ionic plugin add org.apache.cordova.camera
-#ionic plugin add org.apache.cordova.console
-#ionic plugin add org.apache.cordova.contacts
-#ionic plugin add org.apache.cordova.device
-#ionic plugin add org.apache.cordova.dialogs
-#ionic plugin add org.apache.cordova.file
-#ionic plugin add org.apache.cordova.file-transfer
-#ionic plugin add org.apache.cordova.geolocation
-#ionic plugin add org.apache.cordova.inappbrowser
-#ionic plugin add org.apache.cordova.splashscreen
-#ionic plugin add org.apache.cordova.statusbar
-#ionic plugin add https://github.com/phonegap-build/PushPlugin.git
-#ionic plugin add de.appplant.cordova.plugin.local-notification
-#ionic plugin add https://github.com/EddyVerbruggen/Calendar-PhoneGap-Plugin.git
-#ionic plugin add https://github.com/christocracy/cordova-plugin-background-geolocation.git
-#ionic plugin add https://github.com/VitaliiBlagodir/cordova-plugin-datepicker.git
+ionic plugin add com.ionic.keyboard
+ionic plugin add cordova-plugin-camera
+ionic plugin add org.apache.cordova.console
+ionic plugin add cordova-plugin-contacts
+ionic plugin add cordova-plugin-device
+ionic plugin add cordova-plugin-dialogs
+ionic plugin add cordova-plugin-file
+ionic plugin add cordova-plugin-file-transfer
+ionic plugin add cordova-plugin-geolocation
+ionic plugin add cordova-plugin-inappbrowser
+ionic plugin add cordova-plugin-splashscreen
+ionic plugin add cordova-plugin-statusbar
+ionic plugin add cordova-plugin-whitelist
+ionic plugin add https://github.com/phonegap-build/PushPlugin.git
+ionic plugin add https://github.com/EddyVerbruggen/Calendar-PhoneGap-Plugin.git
+
 # build resources like images
 ionic resources
+
 # update ionic libraries
 ionic lib
 echo 'you need to update angular and angular-resource manually and'
