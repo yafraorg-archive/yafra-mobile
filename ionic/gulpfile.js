@@ -69,7 +69,6 @@ gulp.task('lint', function() {
     return gulp.src('./www/js/*.js')
         .pipe(jshint())
         .pipe(jshint.reporter('jshint-stylish'))
-        .pipe(jshint.reporter('fail'))
         .pipe(count('jshint', 'files lint free'));
 });
 function count(taskName, message) {
