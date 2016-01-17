@@ -11,7 +11,10 @@
 echo ' '
 echo 'doing npm cordova and ionic update now'
 # setup / update software
-npm -g update ionic cordova karma protractor ios-sim ios-deploy
+npm -g install bower
+npm -g install cordova ionic
+npm -g install karma protractor
+npm -g install ios-sim ios-deploy
 echo ' '
 echo 'node/npm update done - installed apps:'
 npm list -g --depth=0
@@ -47,6 +50,7 @@ echo 'make backup and update ionic css and js stuff and gulp'
 cp -R ionic ionic-bup
 cd ionic/
 mkdir -p hooks
+rm -rf node_modules/
 # install local npm apps
 npm install
 # remove existing platforms and plugins

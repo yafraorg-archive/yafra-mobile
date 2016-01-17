@@ -25,6 +25,8 @@ Use the admin-install-upgrage.sh script which basically performs the following (
  * update ionic version (the ionic js and css files)
  * build resources (icons, splash)
  * update plugins
+ * add sass support (ionic setup sass)
+ * copy ionic scss to ionic/ionic-scss (before running gulp sass)
 
 ### build
 After install / upgrade run the build admin-build.sh which performs the following:
@@ -39,13 +41,16 @@ This project uses shippable.com to build (but without ios build)
 
 ## Plugins used
 ### ngCordova plugins
+``
 cordova plugin add https://github.com/christocracy/cordova-plugin-background-geolocation.git
 cordova plugin add https://github.com/EddyVerbruggen/Calendar-PhoneGap-Plugin.git
 cordova plugin add de.appplant.cordova.plugin.local-notification
 cordova plugin add https://github.com/phonegap-build/PushPlugin.git
 ng-cordova oauth
+``
 
 ### plain cordova plugins
+
 cordova plugin add org.apache.cordova.file-transfer
 cordova plugin add org.apache.cordova.inappbrowser
 cordova plugin add org.apache.cordova.contacts
