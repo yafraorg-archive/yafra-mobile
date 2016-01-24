@@ -3336,7 +3336,8 @@ body,
   color: #000;
   word-wrap: break-word;
   font-size: 14px;
-  font-family: "Helvetica Neue", "Roboto", "Segoe UI", sans-serif;
+  font-family: -apple-system;
+  font-family: "-apple-system", "Helvetica Neue", "Roboto", "Segoe UI", sans-serif;
   line-height: 20px;
   text-rendering: optimizeLegibility;
   -webkit-backface-visibility: hidden;
@@ -3494,10 +3495,15 @@ ion-infinite-scroll {
   bottom: 0;
   left: 0;
   position: absolute; }
+  .overflow-scroll.pane {
+    overflow-x: hidden;
+    overflow-y: scroll; }
   .overflow-scroll .scroll {
     position: static;
     height: 100%;
     -webkit-transform: translate3d(0, 0, 0); }
+  .overflow-scroll.keyboard-up:not(.keyboard-up-confirm) {
+    overflow: hidden; }
 
 /* If you change these, change platform.scss as well */
 .has-header {
@@ -3589,7 +3595,7 @@ h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
   color: #000;
   font-weight: 500;
-  font-family: "Helvetica Neue", "Roboto", "Segoe UI", sans-serif;
+  font-family: "-apple-system", "Helvetica Neue", "Roboto", "Segoe UI", sans-serif;
   line-height: 1.2; }
   h1 small, h2 small, h3 small, h4 small, h5 small, h6 small,
   .h1 small, .h2 small, .h3 small, .h4 small, .h5 small, .h6 small {
@@ -5062,7 +5068,7 @@ ion-tabs.tabs-color-active-dark .tab-item {
   white-space: nowrap;
   font-weight: 400;
   font-size: 14px;
-  font-family: "Helvetica Neue", "Roboto", "Segoe UI", sans-serif;
+  font-family: "-apple-system", "Helvetica Neue", "Roboto", "Segoe UI", sans-serif;
   opacity: 0.7; }
   .tab-item:hover {
     cursor: pointer; }
@@ -5229,7 +5235,12 @@ ion-tabs.tabs-color-active-dark .tab-item {
 
 .menu-open .menu-content .pane,
 .menu-open .menu-content .scroll-content {
-  pointer-events: none;
+  pointer-events: none; }
+
+.menu-open .menu-content .scroll-content .scroll {
+  pointer-events: none; }
+
+.menu-open .menu-content .scroll-content:not(.overflow-scroll) {
   overflow: hidden; }
 
 .grade-b .menu-content,
@@ -7242,9 +7253,6 @@ ion-slides {
   text-align: center; }
 
 .swiper-container {
-  position: absolute;
-  left: 0;
-  top: 0;
   width: 100%;
   height: 100%;
   padding: 0;
@@ -7257,10 +7265,6 @@ ion-slides {
   width: 100%;
   height: 100%;
   padding: 0; }
-
-.swiper-container {
-  width: 100%;
-  height: 100%; }
 
 .swiper-slide {
   width: 100%;
@@ -7488,7 +7492,7 @@ input,
 button,
 select,
 textarea {
-  font-family: "Helvetica Neue", "Roboto", "Segoe UI", sans-serif; }
+  font-family: "-apple-system", "Helvetica Neue", "Roboto", "Segoe UI", sans-serif; }
 
 .item-input {
   display: -webkit-box;
@@ -7695,10 +7699,6 @@ input[type="color"] {
 .platform-android input[type="time"],
 .platform-android input[type="week"] {
   padding-top: 8px; }
-
-.platform-ios textarea,
-.platform-android textarea {
-  text-indent: -3px; }
 
 .item-input input,
 .item-input textarea {
