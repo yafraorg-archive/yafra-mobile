@@ -47,6 +47,7 @@ script:
   - cd ionic/
   #- node_modules/.bin/gulp yafra
   - node_modules/.bin/karma start karma.conf.js --log-level debug --single-run
+  - node_modules/.bin/gulp protractor
   #- node_modules/.bin/webdriver-manager update
   #- node_modules/.bin/protractor tests-e2e/protractor.conf.js
   # TODO copy test files to correct location for shippable
