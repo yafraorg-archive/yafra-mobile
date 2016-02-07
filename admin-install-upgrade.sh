@@ -61,9 +61,10 @@ rm -rf plugins/*
 # add platforms
 ionic platform add ios
 ionic platform add android
-ionic plugin add com.ionic.keyboard
+ionic plugin add ionic-plugin-keyboard
 ionic plugin add cordova-plugin-camera
 ionic plugin add org.apache.cordova.console
+#ionic plugin add cordova-plugin-console
 ionic plugin add cordova-plugin-contacts
 ionic plugin add cordova-plugin-device
 ionic plugin add cordova-plugin-dialogs
@@ -74,8 +75,10 @@ ionic plugin add cordova-plugin-inappbrowser
 ionic plugin add cordova-plugin-splashscreen
 ionic plugin add cordova-plugin-statusbar
 ionic plugin add cordova-plugin-whitelist
-ionic plugin add https://github.com/phonegap-build/PushPlugin.git
+ionic plugin add phonegap-plugin-push
 ionic plugin add https://github.com/EddyVerbruggen/Calendar-PhoneGap-Plugin.git
+#ionic plugin add https://github.com/transistorsoft/cordova-background-geolocation-lt.git
+#ionic plugin add https://github.com/VitaliiBlagodir/cordova-plugin-datepicker.git
 
 # build resources like images
 ionic resources
